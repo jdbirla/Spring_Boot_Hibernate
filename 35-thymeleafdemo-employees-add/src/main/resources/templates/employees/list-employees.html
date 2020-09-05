@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+
+<title>Employee Dir</title>
+</head>
+<body>
+	<div class="container">
+
+		<h3>Employee Directory</h3>
+		<hr>
+		<!-- Add a buttong for addd emp -->
+		<a th:href="@{/employees/showFormForAdd}"
+			Class="btn btn-primary btn-bg mb-2">Add Employee</a>
+		<table class="table table-bordered table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="tempEmployees : ${employees}">
+
+					<td th:text="${tempEmployees.firstName}"></td>
+					<td th:text="${tempEmployees.lastName}"></td>
+					<td th:text="${tempEmployees.email}"></td>
+
+
+				</tr>
+
+
+			</tbody>
+
+		</table>
+
+	</div>
+</body>
+</html>
